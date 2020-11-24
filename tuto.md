@@ -62,44 +62,44 @@ ajoute la configuration ci-dessous :
 Nous, on te conseille d’utiliser l’option « secret » pour cacher tes mots de passe, si tu ne maitrises pas tu peux toujours les écrire ici quand même.
 Remplace nos commentaires par tes données :
 ````yaml camera:
-  - platform: xiaomi_cloud_map_extractor
-	host: !secret xiaomi_vacuum_host #secret à créer ou remplacer par l’ip de l’aspirateur
-	token: !secret xiaomi_vacuum_token #secret à créer ou remplacer par le token de l’aspirateur
-	username: !secret xiaomi_cloud_username #secret à créer ou remplacer par le mail du compte mi-home
-	password: !secret xiaomi_cloud_password #secret à créer ou remplacer par le mot de passe du compte mi-home
-	name: "Aspirateur" #nommer votre aspirateur
-	draw: ['all']
-	map_transformation:
-		scale: 2 #ratio de l’image à tester en fonction de la taille de la carte souhaité
-		rotate: 180 #effectue une rotation de 0, 90, 138, 360 degré de la carte
-		trim:
-			top: 10 #permet de découper l’image sur le bord haut de façon à optimiser l’espace
-			bottom: 20 #permet de découper l’image sur le bord bas de façon à optimiser l’espace
-			left: 30 #permet de découper l’image sur le bord gauche de façon à optimiser l’espace
-			right: 40 #permet de découper l’image sur le bord droit haut de façon à optimiser l’espace
-	sizes:
-		charger_radius: 3
-		vacuum_radius: 4
-	attributes:
-		- calibration_points
-		- charger
-		- goto
-		- goto_path
-		- goto_predicted_path
-		- image
-		- is_empty
-		- map_name
-		- no_go_areas
-		- no_mopping_areas
-		- obstacles
-		- path
-		- room_numbers
-		- rooms
-		- vacuum_position
-		- vacuum_room
-		- walls
-		- zones
-	auto_update: true
+- platform: xiaomi_cloud_map_extractor
+  host: !secret xiaomi_vacuum_host #secret à créer ou remplacer par l’ip de l’aspirateur
+  token: !secret xiaomi_vacuum_token #secret à créer ou remplacer par le token de l’aspirateur
+  username: !secret xiaomi_cloud_username #secret à créer ou remplacer par le mail du compte mi-home
+  password: !secret xiaomi_cloud_password #secret à créer ou remplacer par le mot de passe du compte mi-home
+  name: "Aspirateur" #nommer votre aspirateur
+  draw: ['all']
+  map_transformation:
+    scale: 2 #ratio de l’image à tester en fonction de la taille de la carte souhaité
+    rotate: 180 #effectue une rotation de 0, 90, 138, 360 degré de la carte
+    trim:
+      top: 10 #permet de découper l’image sur le bord haut de façon à optimiser l’espace
+      bottom: 20 #permet de découper l’image sur le bord bas de façon à optimiser l’espace
+      left: 30 #permet de découper l’image sur le bord gauche de façon à optimiser l’espace
+      right: 40 #permet de découper l’image sur le bord droit haut de façon à optimiser l’espace
+  sizes:
+    charger_radius: 3
+    vacuum_radius: 4
+  attributes:
+    - calibration_points
+    - charger
+    - goto
+    - goto_path
+    - goto_predicted_path
+    - image
+    - is_empty
+    - map_name
+    - no_go_areas
+    - no_mopping_areas
+    - obstacles
+    - path
+    - room_numbers
+    - rooms
+    - vacuum_position
+    - vacuum_room
+    - walls
+    - zones
+  auto_update: true
 ````
 
 Une fois la configuration réalisée, il faut redémarrer home assistant.
